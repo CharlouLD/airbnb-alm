@@ -3,7 +3,14 @@ module Account
     layout :account
 
     def index
-      current_user.
+      # current_user.
+    end
+
+    def edit
+
+    end
+
+    def update
     end
   end
 end

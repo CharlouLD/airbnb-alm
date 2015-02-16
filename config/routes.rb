@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: "home#index"
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show, :new, :create]
+  resources :bookings, only: [:new, :create]
 
   namespace :account do
-    resources :products, only: [:index]
+    resources :dashboard, only: [:index]
+    resources :products, only: [:index, :edit, :update]
+    resources :bookings, only: [:index_incoming, :index_outhoing, :edit_outgoing, :update_outgoing, :accept_incoming, :reject_outgoing]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
