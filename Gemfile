@@ -61,4 +61,6 @@ gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
 gem 'devise'
+gem 'omniauth-facebook'
+gem 'koala'
 
