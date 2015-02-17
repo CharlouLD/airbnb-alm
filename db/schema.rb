@@ -36,13 +36,13 @@ ActiveRecord::Schema.define(version: 20150217114732) do
     t.integer  "user_id"
     t.string   "city"
     t.integer  "night_price"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "online"
+    t.boolean  "online",               default: true
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
