@@ -1,0 +1,15 @@
+<div class="wrapper">
+<div class="container">
+  <%= @product.picture %>
+</div>
+
+<div class="bg-white">
+  <%= @product.title %>
+  <%= link_to 'send a request', new_booking_path %>
+</div>
+
+<div class="bg-gray-lighter">
+  <%= @product.description %>
+</div>
+</div>
+
