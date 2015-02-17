@@ -15,9 +15,21 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- Navbar Middle Calls To Action -->
+      <ul class="nav navbar-nav navbar-middle">
+        <li>
+          <!-- will be deleted when search bar in V2 -->
+          <%= link_to "See Places", products_path, { class: 'btn btn-danger' } %>
+        </li>
+        <li>
+          <%= link_to "Publish an Ad", new_product_path, { class: 'btn btn-danger' } %>
+        </li>
+      </ul>
+
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li>
+            <!-- create a contact url - TBU -->
             <%= link_to "#" do %>
               <i class="fa fa-envelope-o"></i> Messages
             <% end %>
@@ -53,9 +65,6 @@
             <%= link_to "Connexion", new_user_session_path %>
           </li>
         <% end %>
-        <li>
-          <%= link_to "Publish an announce", "#", class: "btn" %>
-        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
