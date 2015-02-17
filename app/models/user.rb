@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
           :rememberable,
           :trackable,
           :validatable,
-          :omniauthable, :omniauth_providers => [ :facebook ]
+          :omniauthable, :omniauth_providers => [ :facebook ] # here we could add :google_oauth2
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -20,5 +20,6 @@ class User < ActiveRecord::Base
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
 end
 
