@@ -1,1 +1,15 @@
 // Your footer style
+#footer{
+  padding: 1% 10%;
+  background-color: $gray-darker;
+  color: white;
+
+  .fa{
+    color: white;
+    font-size: 24px;
+    &:hover{
+      color: $red;
+      text-decoration: none
+    }
+  }
+}
