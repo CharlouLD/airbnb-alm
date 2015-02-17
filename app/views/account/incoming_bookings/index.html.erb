@@ -1,29 +1,28 @@
-<h2>Incoming bookings</h2>
 
-<div class="container">
 
-<div class="row table-title">
-      <div class="col-xs-4">
-        Your places
-      </div>
-
-      <div class="col-xs-2">
-        Check-in
-      </div>
-
-      <div class="col-xs-2">
-        Check-Out
-      </div>
-
-      <div class="col-xs-2">
-        Accept
-      </div>
-
-      <div class="col-xs-2">
-        Reject
-      </div>
+<div class="container text-center padded">
+<h2 class="title">Your places booking requests</h2>
+  <div class="row table-title">
+    <div class="col-xs-4">
+      Your places
     </div>
 
+    <div class="col-xs-2">
+      Check-in
+    </div>
+
+    <div class="col-xs-2">
+      Check-Out
+    </div>
+
+    <div class="col-xs-2">
+      Accept
+    </div>
+
+    <div class="col-xs-2">
+      Reject
+    </div>
+  </div>
 
   <% @bookings.each do | booking | %>
     <div class="row">
