@@ -1,0 +1,22 @@
+<div class="container padded">
+
+  <%# if @product.picture %>
+    <%#= image_tag @post.picture.url(:medium) %>
+  <%# end %>
+  <% if @booking.errors %>
+    <%= @booking.errors.messages %>
+  <% end %>
+
+
+  <h2>When do you want to book ?</h2>
+  <%= simple_form_for([@product, @booking]) do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.input :check_in %>
+    <%= f.input :night %>
+    <%= f.input :message %>
+
+
+    <%= f.button :submit %>
+  <% end %>
+</div>
