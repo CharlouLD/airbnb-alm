@@ -34,23 +34,30 @@
 </div>
 
 <!-- Product Snapshot -->
+
+
 <div class="bg-gray-lighter text-center">
   <div class="row">
     <div class="col-xs-12 band">
-      <div class=" col-sm-4">
-        <%= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
+
+      <% @products.each do |p| %>
+          <%= render "_product", product: p %>
+      <% end %>
+   <!-- Statique à supprimer - MAX -->
+   <!--    <div class=" col-sm-4">
+        <%#= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
         <h4>Title appart</h4>
       </div>
 
       <div class="col-sm-4">
-        <%= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
+        <%#= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
         <h4>Title appart</h4>
       </div>
 
       <div class="col-sm-4">
-       <%= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
+       <%#= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
         <h4>Title appart</h4>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
