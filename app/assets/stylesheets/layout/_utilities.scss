@@ -34,12 +34,7 @@
 
 .bg-white {
   background: white;
-  padding-top: 3px;
-  padding-left: 5px;
-  padding-bottom: 3px;
-  p {
-    margin-bottom: 0px;
-  }
+  color: black
 }
 
 .bg-gray-lighter {
@@ -51,7 +46,13 @@
   text-align: left;
   height: 200px;
   width: 300px;
-  border-radius: 5px;
-  margin-bottom: 20px
-  ;
+  border-radius: $border-radius-base;
+  margin-bottom: 20px;
+}
+
+#title-box {
+  background: white;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-bottom: 3px;
 }

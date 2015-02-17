@@ -1,17 +1,30 @@
 <div class="wrapper">
-<div class="container">
-  <% if @product.picture %>
-    <%= image_tag @product.picture.url(:medium) %>
-  <% end %>
-</div>
 
-<div class="bg-white">
-  <%= @product.title %>
-  <%= link_to 'send a request', new_product_booking_path(@product) %>
-</div>
+  <div class="full-img">
+    <% if @product.picture %>
+      <%= image_tag @product.picture.url(:large) %>
+    <% end %>
+  </div>
 
-<div class="bg-gray-lighter">
-  <%= @product.description %>
-</div>
+  <div class="bg-white">
+
+    <div class="title-big">
+      <h2><%= @product.title %></h2>
+    </div>
+
+    <div class="call-to-action">
+      <%= link_to 'send a request', new_product_booking_path(@product), class: "btn btn-primary" %>
+    </div>
+
+  </div>
+
+  <div class="bg-gray-lighter">
+
+    <div class="bg-white" id="full-description">
+      <p><%= @product.description %></p>
+    </div>
+
+  </div>
+
 </div>
 
