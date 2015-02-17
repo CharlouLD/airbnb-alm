@@ -1,11 +1,13 @@
 <div class="wrapper">
 <div class="container">
-  <%= @product.picture %>
+  <% if @product.picture %>
+    <%= image_tag @product.picture.url(:medium) %>
+  <% end %>
 </div>
 
 <div class="bg-white">
   <%= @product.title %>
-  <%= link_to 'send a request', new_booking_path %>
+  <%= link_to 'send a request', new_product_booking_path(@product) %>
 </div>
 
 <div class="bg-gray-lighter">

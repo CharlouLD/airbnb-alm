@@ -13,6 +13,7 @@
       <div class="announce">
         <p><%= link_to product.title, product_path(product) %></p>
         <p>$<%= product.night_price %></p>
+        <%= image_tag product.picture.url(:medium) %>
       </div>
 
      </div>

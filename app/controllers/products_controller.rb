@@ -14,7 +14,9 @@ class ProductsController < ApplicationController
   end
 
   def create
+    owner = current_user
     @product = Product.new(product_params)
+    @product.owner = owner
     if @product.save
          redirect_to product_path(@product)
        else

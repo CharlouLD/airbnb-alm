@@ -1,13 +1,20 @@
-
-<div class="col-sm-4 col-sm-offset-4">
-  <%= simple_form_for(@product) do |f| %>
-    <%= f.error_notification %>
-
-    <%= f.input :title %>
-    <%= f.input :city %>
-    <%= f.input :description %>
-    <%= f.input :online, as: :radio_buttons %>
-
-    <%= f.button :submit %>
+<div class="container padded">
+  <div class="col-sm-4 col-sm-offset-4">
+    <% if @product.errors %>
+    <%= @product.errors.messages %>
   <% end %>
+    <%= simple_form_for(@product) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :title %>
+      <%= f.input :city %>
+      <%= f.input :night_price %>
+      <%= f.input :description %>
+      <%= f.input :online, as: :radio_buttons %>
+      <%= f.input :picture %>
+
+      <%= f.button :submit %>
+    <% end %>
+  </div>
 </div>
+
