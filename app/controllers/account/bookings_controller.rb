@@ -1,6 +1,6 @@
 module Account
   class BookingsController < ApplicationController
-    layout :account
+    layout 'account' # MAX changed syntax layout :account
 
     def index_outgoing
       # current_user.
@@ -14,7 +14,7 @@ module Account
     end
 
     def index_incoming
-      # current_user.
+      @bookings = current_user.bookings
     end
 
     def accept_incoming
