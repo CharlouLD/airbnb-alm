@@ -4,5 +4,9 @@ class Booking < ActiveRecord::Base
 
   has_one :owner, through: :product
 
-  validates :customer, :product, :check_in, :night, presence: true
+  validates :check_in,
+            :customer,
+            :night,
+            :product,
+            presence: true
 end
