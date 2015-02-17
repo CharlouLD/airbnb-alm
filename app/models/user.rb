@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
           :validatable,
           :omniauthable, :omniauth_providers => [ :facebook ] # here we could add :google_oauth2
 
+  has_many :products
+  has_many :bookings
+
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
