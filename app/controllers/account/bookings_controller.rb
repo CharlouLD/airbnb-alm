@@ -1,3 +1,4 @@
+# TO REMOVE ???
 module Account
   class BookingsController < ApplicationController
     layout 'account' # MAX changed syntax layout :account

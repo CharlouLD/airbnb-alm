@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'incoming_bookings/index'
+
   # devise_for :users
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "home#index"
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :dashboard, only: [:index]
+    resources :dashboards, only: [:index]
     resources :products, only: [:index, :edit, :update]
     resources :incoming_bookings, only: [:index, :accept_incoming, :reject_incoming]
     resources :outgoing_bookings, only: [:index, :edit, :update]
