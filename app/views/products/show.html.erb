@@ -1,28 +1,44 @@
 <div class="bellow-navbar">
-
-  <div class="full-img">
-    <% if @product.picture %>
-      <%= image_tag @product.picture.url(:large) %>
-    <% end %>
+  <div class="container" id="show">
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1">
+        <div class="card">
+          <% if @product.picture %>
+          <%= image_tag @product.picture.url(:large), class: "card-img" %>
+          <% end %>
+          <div class="card-label">
+            <span><%= @product.night_price %></span>
+            <sup>$</sup>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class=" bg-white presentation">
+          <div class="presentation-header">
+            <h2><%= @product.title %></h2>
+            <%= link_to 'send a request', new_product_booking_path(@product), class: "btn btn-primary presentation-button" %>
+          </div>
+          <div class="presentation-body">
+            <p><strong>About this housing: </strong></p>
+            <p><%= @product.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="bg-white">
 
-    <div class="title-big">
-      <h2><%= @product.title %></h2>
+
+  <div class="bg-white row">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
     </div>
-
-    <div class="call-to-action">
-      <%= link_to 'send a request', new_product_booking_path(@product), class: "btn btn-primary" %>
-    </div>
-
   </div>
 
   <div class="bg-gray-lighter">
 
-    <div class="bg-white" id="full-description">
-      <p><%= @product.description %></p>
-    </div>
+
 
   </div>
 

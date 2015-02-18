@@ -2,7 +2,9 @@
 <div class="bolow-navbar">
   <div class="container padded">
     <div class="row">
+
       <% @products.each do |product| %>
+      <%= link_to(product) do %>
         <div class="col-xs-6 col-sm-4">
           <div class="card">
             <%= image_tag product.picture.url(:medium), class: "card-img" %>
@@ -15,6 +17,7 @@
             </div>
           </div>
         </div>
+     <% end %>
      <% end %>
     </div>
   </div>
