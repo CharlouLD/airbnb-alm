@@ -1,4 +1,5 @@
 $gray-presentation: #E2E1E2;
+$red: #FC5B63;
 
 #show{
   margin-top: 140px;
@@ -6,13 +7,13 @@ $gray-presentation: #E2E1E2;
 
 
 #full-description {
-margin-top: 50px;
-margin-bottom: 50px;
-margin-left: auto;
-margin-right: auto;
-width: 60%;
-border-radius: $border-radius-base;
-padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-radius: $border-radius-base;
+  padding: 15px;
 }
 
 .presentation {
@@ -23,13 +24,21 @@ padding: 15px;
   padding-right: 30px;
   padding-bottom: 70px;
   margin-bottom: 50px;
-    &-header {
-    padding-top: 10px;
-      .presentation-button {
-      float: right;
-      }
+  margin-top: 10px;
+  &-header {
+  padding-top: 10px;
+  }
+  &-button {
+    float: right;
+    height: 40px;
+    border-bottom: 3px solid darken($blue, 10%);
+    border-right: 2px solid darken($blue, 10%);
+    &:active {
+      border-bottom: none;
+      border-right: 1px;
     }
-    .presentation-body {
-      padding-top: 40px;
-    }
+  }
+  &-body {
+    padding-top: 40px;
+  }
 }

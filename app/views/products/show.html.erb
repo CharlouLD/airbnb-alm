@@ -2,45 +2,21 @@
   <div class="container" id="show">
     <div class="row">
       <div class="col-sm-5 col-sm-offset-1">
-        <div class="card">
-          <% if @product.picture %>
-          <%= image_tag @product.picture.url(:large), class: "card-img" %>
-          <% end %>
-          <div class="card-label">
-            <span><%= @product.night_price %></span>
-            <sup>$</sup>
-          </div>
-        </div>
+        <%= render "card", product: @product, footer: false %>
       </div>
       <div class="col-sm-5">
         <div class=" bg-white presentation">
           <div class="presentation-header">
             <h2><%= @product.title %></h2>
-            <%= link_to 'send a request', new_product_booking_path(@product), class: "btn btn-primary presentation-button" %>
           </div>
           <div class="presentation-body">
             <p><strong>About this housing: </strong></p>
             <p><%= @product.description %></p>
           </div>
+          <%= link_to 'send a request', new_product_booking_path(@product), class: "btn btn-primary presentation-button" %>
         </div>
       </div>
     </div>
   </div>
-
-
-
-  <div class="bg-white row">
-
-    <div class="col-sm-6 col-sm-offset-3">
-
-    </div>
-  </div>
-
-  <div class="bg-gray-lighter">
-
-
-
-  </div>
-
 </div>
 
