@@ -1,20 +1,6 @@
 @import "home";
+@import "listing";
 
 .wrapper {
   margin-top: 80px;
-}
-
-.price-ticket {
-  position: absolute;
-  left: 0;
-  bottom: 30px;
-  color: white;
-  background-color: rgba(60,63,64,0.9);
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 20px;
-}
-
-.padded-container {
-  padding-left: 20px;
 }
