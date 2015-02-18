@@ -3,7 +3,7 @@
     <% if @product.errors %>
     <%= @product.errors.messages %>
   <% end %>
-    <%= simple_form_for(@product) do |f| %>
+    <%= simple_form_for(@product, url: account_product_path(@product)) do |f| %>
       <%= f.error_notification %>
 
       <%= f.input :title %>
@@ -12,7 +12,6 @@
       <%= f.input :description %>
       <%= f.input :online, as: :radio_buttons %>
       <%= f.input :picture %>
-
       <%= f.button :submit %>
     <% end %>
   </div>
