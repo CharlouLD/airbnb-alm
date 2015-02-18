@@ -2,18 +2,28 @@ Rails.application.routes.draw do
 
   # devise_for :users
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
+  # Reminder, one user story one route
+  # As a visitor (user not logged) I shoudl be able to see the home, all condo, one condo
+  # As a user (not owner), I should be able to make a booking, edit it, see all ma booking
+  # become an owner (=create a product)
   root to: "home#index"
   resources :products, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create] #  + edit update ici ?
   end
+  resources :bookings, only: [:index] #outgoing bookings # ou + edit update la ? Pas d'importance tant que les routes existe qqpart
 
-  resources :bookings, only: [:index] # outgoing bookings, update?
 
+  # As a user who is also an owner
+  # I should be able to create a new place (root already created), edit it, see all my place,
+  # see who wants to book it, answer the bookings
+  # have some up of everythings that is link to me (dashboard)
   namespace :account do
     resources :dashboards, only: [:index]
     resources :products, only: [:index, :edit, :update]
     resources :bookings, only: [:index, :update] # incoming bookings
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
