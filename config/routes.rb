@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'incoming_bookings/index'
-
   # devise_for :users
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "home#index"
