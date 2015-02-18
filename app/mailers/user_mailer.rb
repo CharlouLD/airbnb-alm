@@ -10,4 +10,6 @@ class UserMailer < ApplicationMailer
 
     mail(to: @user.email, subject: 'Welcome to AirBnB')
   end
+
+  # TODO Add here a methode
 end
