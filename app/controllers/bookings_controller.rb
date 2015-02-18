@@ -18,6 +18,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @booking = Booking.all
+  end
+
+
   def booking_params
       params.require(:booking).permit(:check_in, :message, :night)
   end
