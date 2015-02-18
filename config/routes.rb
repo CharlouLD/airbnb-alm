@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :dashboard, only: [:index]
+    resources :dashboards, only: [:index]
     resources :products, only: [:index, :edit, :update]
-    resources :bookings, only: [:index_incoming, :index_outgoing, :edit_outgoing, :update_outgoing, :accept_incoming, :reject_incoming]
+    resources :incoming_bookings, only: [:index, :accept_incoming, :reject_incoming]
+    resources :outgoing_bookings, only: [:index, :edit, :update]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
