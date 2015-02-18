@@ -1,0 +1,49 @@
+<div class="container text-center padded">
+<h2 class="title">Your booking</h2>
+  <div class="row table-title">
+    <div class="col-xs-4">
+      Your places
+    </div>
+
+    <div class="col-xs-2">
+      Check-in
+    </div>
+
+    <div class="col-xs-2">
+      Check-Out
+    </div>
+
+    <div class="col-xs-2">
+      Current status
+    </div>
+
+    <div class="col-xs-2">
+      Edit
+    </div>
+
+  </div>
+
+  <% @bookings.each do | booking | %>
+    <div class="row">
+      <div class="col-xs-4">
+        <%= booking.product.title %>
+      </div>
+
+      <div class="col-xs-2">
+        <%= booking.check_in %>
+      </div>
+
+      <div class="col-xs-2">
+        <%= booking.check_out %>
+      </div>
+
+      <div class="col-xs-2">
+        <%= booking.status %>
+      </div>
+
+
+
+
+    </div>
+  <% end %>
+</div>
