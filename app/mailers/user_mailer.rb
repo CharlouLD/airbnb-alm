@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'your-email@example.com'
+  default from: 'team@airbnb-alm.com'
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
