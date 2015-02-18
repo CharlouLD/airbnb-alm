@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  after_create :send_welcome_email
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise  :database_authenticatable,
@@ -23,6 +25,12 @@ class User < ActiveRecord::Base
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver
   end
 end
 
