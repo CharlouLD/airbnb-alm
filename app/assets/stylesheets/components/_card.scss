@@ -1,0 +1,25 @@
+.card {
+    position: relative;
+    text-align: left;
+    border-radius: $border-radius-base;
+    margin: 10px 40px;
+  &-img{
+    width: 100%;
+  }
+  &-content{
+    background: white;
+    padding-top: 11px;
+    padding-left: 5px;
+    height: 50px;
+  }
+  &-label {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    color: white;
+    background-color: rgba(60,63,64,0.9);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+}
