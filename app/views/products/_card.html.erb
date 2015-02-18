@@ -9,13 +9,12 @@
       <p><%= link_to product.title, product_path(product) %></p>
     </div>
     <% else %>
-    <div class="card-content row">
-      <div class="col-sm-4">
-        <img src="http://placehold.it/40x40" alt="profil picture">
-      </div>
-      <div class="col-sm-4">
+    <div class="card-content">
         <p><%= product.owner.name %></p>
-      </div>
+        <img src="http://placehold.it/40x40" alt="profil picture">
     </div>
   <% end %>
 </div>
+
+
+
