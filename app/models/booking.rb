@@ -9,4 +9,9 @@ class Booking < ActiveRecord::Base
             :night,
             :product,
             presence: true
+
+def check_out
+  self.check_in + self.night
+end
+
 end

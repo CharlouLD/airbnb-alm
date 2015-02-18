@@ -7,11 +7,12 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
+  resources :bookings, only: [:index] # outgoing bookings, update?
+
   namespace :account do
     resources :dashboards, only: [:index]
     resources :products, only: [:index, :edit, :update]
-    resources :incoming_bookings, only: [:index, :accept_incoming, :reject_incoming]
-    resources :outgoing_bookings, only: [:index, :edit, :update]
+    resources :bookings, only: [:index, :update] # incoming bookings
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
