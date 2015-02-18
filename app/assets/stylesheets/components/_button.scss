@@ -1,3 +1,11 @@
 /* -------------------------------------
  * You killer button SASS module
  * ------------------------------------- */
+ .button {
+  border-bottom: 3px solid darken($blue, 10%);
+  border-right: 2px solid darken($blue, 10%);
+  &:active {
+    border-bottom: none;
+    border-right: 1px;
+  }
+ }

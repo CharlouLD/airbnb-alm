@@ -3,20 +3,21 @@
   <%# if @product.picture %>
     <%#= image_tag @product.picture.url(:medium) %>
   <%# end %>
-  <% if @booking.errors %>
-    <%= @booking.errors.messages %>
-  <% end %>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
 
 
-  <h2>When do you want to book ?</h2>
-  <%= simple_form_for([@product, @booking]) do |f| %>
-  <%= f.error_notification %>
+      <h2>When do you want to book ?</h2>
+      <%= simple_form_for([@product, @booking]) do |f| %>
+      <%= f.error_notification %>
 
-    <%= f.input :check_in %>
-    <%= f.input :night %>
-    <%= f.input :message %>
+        <%= f.input :check_in %>
+        <%= f.input :night %>
+        <%= f.input :message %>
 
 
-    <%= f.button :submit %>
-  <% end %>
+        <%= f.button :submit, class: "button btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
