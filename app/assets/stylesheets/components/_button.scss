@@ -9,3 +9,8 @@
     border-right: 1px;
   }
  }
+ .selected{
+  background-color:darken($blue, 30%);
+  border-bottom: 3px solid darken($blue, 40%);
+  border-right: 2px solid darken($blue, 40%);
+ }
