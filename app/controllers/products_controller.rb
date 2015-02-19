@@ -3,6 +3,15 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @hash = Gmaps4rails.build_markers(@products) do |product, marker|
+          marker.lat product.latitude
+          marker.lng product.longitude
+    #      marker.picture({
+    #             "url" => ,
+    #             "width" =>  32,
+    #             "height" => 32})
+          marker.infowindow render_to_string(partial: "/products/map_box", locals: { product: product })
+        end
   end
 
   def show
