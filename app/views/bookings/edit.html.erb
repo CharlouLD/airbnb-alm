@@ -1,0 +1,23 @@
+<div class="container padded">
+
+  <%# if @product.picture %>
+    <%#= image_tag @product.picture.url(:medium) %>
+  <%# end %>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+
+      <h2>Change your booking</h2>
+      <%= simple_form_for(@booking) do |f| %>
+      <%= f.error_notification %>
+
+        <%= f.input :check_in %>
+        <%= f.input :night %>
+        <%= f.input :message %>
+
+
+        <%= f.button :submit, class: "button btn btn-primary", value: "update" %>
+      <% end %>
+    </div>
+  </div>
+</div>
