@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-  def create
+  def update
     customer = current_user
     @product = Product.find(params[:product_id])
     @booking = @product.bookings.build(booking_params)

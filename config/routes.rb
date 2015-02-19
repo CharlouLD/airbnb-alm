@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # become an owner (=create a product)
   root to: "home#index"
   resources :products, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:new, :create] #  + edit update ici ?
+    resources :bookings, only: [:new, :create, :edit, :update] #  + edit update ici ?
   end
   resources :bookings, only: [:index] #outgoing bookings # ou + edit update la ? Pas d'importance tant que les routes existe qqpart
 
