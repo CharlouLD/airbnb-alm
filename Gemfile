@@ -66,3 +66,4 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
 
+gem 'geocoder'
