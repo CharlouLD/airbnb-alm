@@ -11,5 +11,18 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Welcome to AirBnB')
   end
 
-  # TODO Add here a methode
+  def booking_sent(user)
+    @user = user
+    mail(to: @user.email, subject: 'Booking sent')
+  end
+
+  def booking_accepted(user)
+    @user = user
+    mail(to: @user.email, subject: 'Booking accepted')
+  end
+
+  def booking_refected(user)
+    @user = user
+    mail(to: @user.email, subject: 'Booking Reject')
+  end
 end
