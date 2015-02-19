@@ -24,19 +24,15 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:product_id])
-    @booking = Booking.new
+    @booking = Booking.find(params[:id])
   end
 
-  def create
-    customer = current_user
-    @product = Product.find(params[:product_id])
-    @booking = @product.bookings.build(booking_params)
-    @booking.customer = customer
-    if @booking.save
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
       redirect_to account_dashboards_path
     else
-      render :new
+      render :edit
     end
   end
 
