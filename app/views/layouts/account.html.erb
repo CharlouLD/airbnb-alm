@@ -15,8 +15,9 @@
   <%= render "shared/navbar" %>
   <%= yield %>
   <%= render "shared/footer" %>
+  <%= yield(:before_js) %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= yield(:js) %>
+  <%= yield(:after_js) %>
  <!--  ## TODO  Change with refacto rail course -->
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

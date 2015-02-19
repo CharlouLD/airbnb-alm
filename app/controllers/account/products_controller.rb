@@ -20,7 +20,7 @@ module Account
     end
 
     def product_params
-      params.require(:product).permit(:title, :description, :picture, :online, :city, :night_price)
+      params.require(:product).permit(:title, :description, :picture, :online, :address, :night_price)
     end
   end
 end

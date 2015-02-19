@@ -65,7 +65,7 @@
 <row name="online" null="1" autoincrement="0">
 <datatype>BLOB</datatype>
 <default>NULL</default></row>
-<row name="city" null="1" autoincrement="0">
+<row name="address" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="description" null="1" autoincrement="0">

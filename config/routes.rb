@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :edit, :update]
 
+  get "/search", to: "products#search"
 
   # As a user who is also an owner
   # I should be able to create a new place (root already created), edit it, see all my place,
