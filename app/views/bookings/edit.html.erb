@@ -9,15 +9,16 @@
 
       <h2>Change your booking</h2>
       <%= simple_form_for(@booking) do |f| %>
-      <%= f.error_notification %>
-
-        <%= f.input :check_in %>
-        <%= f.input :night %>
+        <%= f.error_notification %>
+        <div class="input-daterange" id="datepicker">
+          <%= f.text_field :check_in, :class => 'input-small', :id => 'booking_check_in'%>
+          <span class="add-on">to</span>
+           <%= f.text_field :checkout, :class => 'input-small', :id => 'booking_check_out'%>
+        </div>
         <%= f.input :message %>
-
-
-        <%= f.button :submit, class: "button btn btn-primary", value: "update" %>
+        <%= f.button :submit, class: "button btn btn-primary", value:'Updated'%>
       <% end %>
     </div>
   </div>
 </div>
+
