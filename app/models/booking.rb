@@ -8,13 +8,10 @@ class Booking < ActiveRecord::Base
 
   validates :check_in,
             :customer,
-            :night,
+            :checkout,
             :product,
             presence: true
 
-def check_out
-  self.check_in + self.night
-end
 
   def send_booking_sent_email
     UserMailer.booking_sent(self.customer).deliver
