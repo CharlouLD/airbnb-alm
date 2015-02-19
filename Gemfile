@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -67,3 +68,6 @@ gem 'omniauth-facebook'
 gem 'koala'
 
 gem 'geocoder'
+
+gem "gmaps4rails"
+gem "rails-assets-underscore"
