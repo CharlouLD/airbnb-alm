@@ -8,13 +8,21 @@
     <div class="card-content">
       <p><%= link_to product.title, product_path(product) %></p>
     </div>
+    <% elsif footer == nil %>
+  <div class="card-content">
+    <p><%= link_to product.title, product_path(product) %></p>
+    <%= link_to edit_account_product_path(product) do %>
+      <i class="fa fa-pencil-square-o card-icon"></i>
+    <% end %>
     <% else %>
     <div class="card-content">
         <p><%= product.owner.name %></p>
         <img src="http://placehold.it/40x40" alt="profil picture">
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
+
 
 
 
