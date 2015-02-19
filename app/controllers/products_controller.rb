@@ -24,6 +24,10 @@ class ProductsController < ApplicationController
        end
   end
 
+  def search
+    @products = Product.near("#{params[:search]}", 5)
+  end
+
 
   private
 

@@ -3,12 +3,23 @@
 <div class="video-wrapper">
   <div class="content">
     <h2>Find a cheap and comfortable place to stay everywhere you travel</h2>
-      <%= link_to "See places", products_path, { class: 'btn btn-danger' } %>
+      <div class="search">
+        <%= form_tag search_path, method: :get do %>
+          <div class="col-sm-4 col-sm-offset-3">
+            <%= text_field_tag :search, params[:search], id: "user_input_autocomplete_address", placeholder: "Where do you want to go", class: "form-control" %>
+          </div>
+          <div class="col-xs-2">
+            <%= button_tag "Search", class: "btn btn-danger" %>
+          </div>
+        <% end %>
+      </div>
+
   </div>
       <video autoplay="autoplay" muted="muted" loop preload="auto">
           <source src="http://mazwai.com/system/posts/videos/000/000/160/original/leonard_soosay--for_benny.mp4?1424004527" type="video/mp4">
           <source src="http://mazwai.com/system/posts/videos/000/000/160/webm/leonard_soosay--for_benny.webm?1424004527" type="video/webm">
       </video>
+
 </div>
 
 <!-- Concept -->
@@ -18,6 +29,8 @@
       <div class="col-sm-4">
         <%= image_tag "save_money.svg", {id: "save_money", alt:"Save Money"}%>
         <p>Save Money</p>
+
+
       </div>
 
       <div class="col-sm-4">
@@ -61,3 +74,10 @@
     </div>
   </div>
 </div>
+
+<%= content_for(:before_js) do %>
+  <!-- Include Google Maps JS API -->
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBF8Fjnx-vLo9xQoxULB1oAE9O4sqYj8hQ">
+  </script>
+<% end %>
