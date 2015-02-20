@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking = @product.bookings.build(booking_params)
     @booking.customer = customer
     if @booking.save
-      redirect_to account_dashboards_path
+      redirect_to bookings_path
     else
       render :new
     end
