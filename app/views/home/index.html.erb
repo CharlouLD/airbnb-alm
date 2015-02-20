@@ -26,25 +26,24 @@
               <%= button_tag "Search", class: "btn btn-danger" %>
             </div>
           </li>
-          <% end %>
+      <% end %>
         </ul>
       </div>
-
   </div>
       <video autoplay="autoplay" muted="muted" loop preload="auto">
           <source src="http://mazwai.com/system/posts/videos/000/000/160/original/leonard_soosay--for_benny.mp4?1424004527" type="video/mp4">
           <source src="http://mazwai.com/system/posts/videos/000/000/160/webm/leonard_soosay--for_benny.webm?1424004527" type="video/webm">
       </video>
-
+    </div>
 </div>
 
 <!-- Concept -->
 <div class="bg-white text-center">
   <div class="row">
-    <div class="col-xs-12 band">
+    <div class="col-xs-12">
       <div class="col-sm-4">
         <%= image_tag "save_money.svg", {id: "save_money", alt:"Save Money"}%>
-        <p>Save Money</p>
+        <h4>Save Money</h4>
         <div class="text-info col-xs-10 col-xs-offset-1 bg-gray-lighter">
           <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke.</p>
         </div>
@@ -52,7 +51,7 @@
 
       <div class="col-sm-4">
         <%= image_tag "increase_revenue.svg", {id: "increase_revenue", alt:"Increase Revenue"}%>
-        <p>Increase Revenue</p>
+        <h4>Increase Revenue</h4>
         <div class="text-info col-xs-10 col-xs-offset-1 bg-gray-lighter">
           <p> Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke.</p>
         </div>
@@ -60,7 +59,7 @@
 
       <div class="col-sm-4">
         <%= image_tag "share_culture.svg", {id: "share_culture", alt:"Share Culture" } %>
-        <p>Share Culture</p>
+        <h4>Share Culture</h4>
         <div class="text-info col-xs-10 col-xs-offset-1 bg-gray-lighter">
           <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke.</p>
         </div>
@@ -74,11 +73,16 @@
 
 <div class="bg-gray-lighter text-center">
   <div class="row">
-    <div class="col-xs-12 band">
 
-      <% @products.each do |p| %>
-          <%= render "product", product: p %>
+
+      <% @products.each do |product| %>
+        <%= link_to(product) do %>
+          <div class="col-xs-6 col-sm-4">
+            <%= render "products/card", product: product, footer: true %>
+          </div>
+        <% end %>
       <% end %>
+  </div>
    <!-- Statique à supprimer - MAX -->
    <!--    <div class=" col-sm-4">
         <%#= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
@@ -94,8 +98,7 @@
        <%#= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
         <h4>Title appart</h4>
       </div> -->
-    </div>
-  </div>
 </div>
+
 
 

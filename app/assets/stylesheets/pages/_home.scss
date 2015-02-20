@@ -3,7 +3,7 @@
   position: relative;
   color:white;
   width: 100%;
-  height: 590px;
+  height: 572px;
   overflow: hidden;
   text-align:center;
 
@@ -31,4 +31,11 @@
 
  .search {
   margin-top: 100px;
+ }
+
+ .text-info{
+  padding: 15px;
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius-base;
+  text-align: justify;
  }
