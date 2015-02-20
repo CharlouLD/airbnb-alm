@@ -16,6 +16,11 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Booking sent')
   end
 
+  def booking_for_you(user)
+    @user = user
+    mail(to: @user.email, subject: 'SomeBody wants to book your flat')
+  end
+
   def booking_accepted(user)
     @user = user
     mail(to: @user.email, subject: 'Booking accepted')
