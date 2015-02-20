@@ -1,53 +1,51 @@
 <div class="container text-center padded">
 <h2 class="title">Your booking</h2>
-  <div class="row table-title">
-    <div class="col-xs-4">
-      Your places
-    </div>
+  <div class="listing">
+    <div class="col-xs-12 ls-title">
+      <h4><div class="col-xs-4">
+        <div class='first-col'>Your places</div>
+      </div>
 
-    <div class="col-xs-2">
-      Check-in
-    </div>
+      <div class="col-xs-2">
+        <div>Check-in</div>
+      </div>
 
-    <div class="col-xs-2">
-      Check-Out
-    </div>
+      <div class="col-xs-2">
+        <div>Check-Out</div>
+      </div>
 
-    <div class="col-xs-2">
-      Current status
-    </div>
+      <div class="col-xs-2">
+        <div>Current status</div>
+      </div>
 
-    <div class="col-xs-2">
-      Edit
-    </div>
+      <!-- <div class="col-xs-2">
+        Edit
+      </div> -->
+    </div></h4>
 
+    <% @bookings.each do | booking | %>
+      <div class="col-xs-12 ls-row">
+        <div class="col-xs-4">
+          <div class='first-col'><%= booking.product.title %></div>
+        </div>
+
+        <div class="col-xs-2">
+          <div><%= booking.check_in %></div>
+        </div>
+
+        <div class="col-xs-2">
+          <div><%= booking.checkout %></div>
+        </div>
+
+        <div class="col-xs-2">
+          <div><%= booking.status %></div>
+        </div>
+
+
+        <div class="col-xs-1 col-xs-offset-1">
+          <div><%= link_to "Edit", edit_booking_path(booking), class:'btn listing-btn' %></div>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <% @bookings.each do | booking | %>
-    <div class="row">
-      <div class="col-xs-4">
-        <%= booking.product.title %>
-      </div>
-
-      <div class="col-xs-2">
-        <%= booking.check_in %>
-      </div>
-
-      <div class="col-xs-2">
-        <%= booking.checkout %>
-      </div>
-
-      <div class="col-xs-2">
-        <%= booking.status %>
-      </div>
-
-
-      <div class="col-xs-2">
-      <%= link_to "Edit", edit_booking_path(booking) %>
-      </div>
-
-
-
-    </div>
-  <% end %>
 </div>
