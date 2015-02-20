@@ -6,27 +6,27 @@
     <h4>
       <div class="col-xs-12 ls-title">
         <div class="col-xs-4">
-          Your places
+          <div class='first-col'>Your places</div>
         </div>
 
         <div class="col-xs-2">
-          Check-in
+          <div>Check-in</div>
         </div>
 
         <div class="col-xs-2">
-          Check-Out
+          <div>Check-Out</div>
         </div>
 
-        <!-- <div class="col-xs-2">
-          Current status
+        <div class="col-xs-2">
+          <div>Customer</div>
+        </div>
+
+        <!-- <div class="col-xs-1">
+          <div>Accept</div>
         </div>
 
         <div class="col-xs-1">
-          Accept
-        </div>
-
-        <div class="col-xs-1">
-          Reject
+          <div>Reject</div>
         </div> -->
       </div>
     </h4>
@@ -34,19 +34,19 @@
     <% @bookings.each do | booking | %>
       <div class="col-xs-12 ls-row">
         <div class="col-xs-4 ">
-          <%= booking.product.title %>
+          <div class='first-col'><%= booking.product.title %></div>
         </div>
 
         <div class="col-xs-2">
-          <%= booking.check_in %>
+          <div><%= booking.check_in %></div>
         </div>
 
         <div class="col-xs-2">
-          <%= booking.checkout %>
+          <div><%= booking.checkout %></div>
         </div>
 
         <div class="col-xs-2">
-          <%= booking.status %>
+          <div><%= booking.customer.email %></div>
         </div>
 
         <%= simple_form_for(booking, url: account_booking_path(booking)) do | f | %>
