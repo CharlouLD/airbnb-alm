@@ -26,7 +26,7 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Booking accepted')
   end
 
-  def booking_refected(user)
+  def booking_rejected(user)
     @user = user
     mail(to: @user.email, subject: 'Booking Reject')
   end
