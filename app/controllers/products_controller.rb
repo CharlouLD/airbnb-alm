@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    # product_with_coordinate = Product.where(longitude: 'NULL')
+    # product_with_coordinate = Product.where(longitude: nil) # Attent to create it through SQL
     product_with_coordinate = @products.select { |p| p.latitude != nil && p.longitude != nil }
     @hash = Gmaps4rails.build_markers(product_with_coordinate) do |product, marker|
           marker.lat product.latitude
