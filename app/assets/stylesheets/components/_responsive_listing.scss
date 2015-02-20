@@ -1,0 +1,114 @@
+/* -------------------------------------
+ * Colors & Fonts
+ * ------------------------------------- */
+// Fonts
+$listing-font: $base-font;
+$listing-title-font: $base-font;
+
+$listing-font-size: 12px;
+$listing-line-height: 2.1;
+$listing-title-font-size: 16px;
+$listing-title-line-height: 2;
+
+// Colors
+$listing-color: black;
+$listing-title-color: white;
+
+$listing-title-bg: $blue;
+$listing-even-bg: white;
+$listing-odd-bg: $gray-lighter;
+$listing-hover-bg: lighten($blue, 20%);
+
+
+/* -------------------------------------
+ * Box-model
+ * ------------------------------------- */
+$listing-padding: 5px 0;
+
+$listing-text-position: left;
+$listing-border: 0.5px solid $gray-light;
+$listing-shadow: 1px 1px 1px $gray-light;
+
+/* -------------------------------------
+ * Button
+ * ------------------------------------- */
+  $listing-btn-size: 10px;
+  $listing-btn-width: 70%;
+  $listing-btn-height: 0.2;
+  $listing-btn-color: white;
+  $listing-btn-bg: $blue;
+  $listing-btn-bg-selected: darken($listing-btn-bg, 30%);
+  $listing-btn-border-bottom: 3px solid darken($listing-btn-bg, 10%);
+  $listing-btn-border-right: 2px solid darken($listing-btn-bg, 10%);
+  $listing-btn-selected-border-bottom: 3px solid darken($listing-btn-bg, 40%);
+  $listing-btn-selected-border-right: 2px solid darken($listing-btn-bg, 40%);
+  $listing-btn-border-radius: 4px;
+
+/* -------------------------------------
+ * SCSS
+ * ------------------------------------- */
+.listing{
+
+    text-align: $listing-text-position;
+    border: $listing-border;
+    box-shadow: $listing-shadow;
+    vertical-align: middle;
+
+  .ls-title {
+    // font-weight:600;
+    color: $listing-title-color;
+    font-family: $listing-title-font;
+    font-size:$listing-title-font-size;
+    background-color: $listing-title-bg;
+    line-height: $listing-title-line-height;
+    }
+
+  .ls-row{
+    // margin-top: 3px;
+    padding: $listing-padding;
+    color: $listing-color;
+    font-family: $listing-font;
+    font-size:$listing-font-size;
+    // background-color: $listing-bg;
+    line-height: $listing-line-height;
+
+    &:nth-child(even) {
+      background-color: $listing-even-bg;
+    }
+
+    &:nth-child(odd) {
+      background-color: $listing-odd-bg;
+    }
+
+    &:hover{
+    background-color: $listing-hover-bg;
+    }
+
+    .listing-btn{
+      font-size:$listing-btn-size;
+      width:$listing-btn-width;
+      line-height:$listing-btn-height;
+      color: $listing-btn-color;
+      background-color:$listing-btn-bg;
+      border-bottom: $listing-btn-border-bottom;
+      border-right: $listing-btn-border-right;
+      border-radius:$listing-btn-border-radius;
+      &:active {
+        border-bottom: none;
+        border-right: 1px;
+      }
+    }
+    .selected{
+        background-color:$listing-btn-bg-selected;
+        border-bottom: $listing-btn-selected-border-bottom;
+        border-right: $listing-btn-selected-border-right;
+      }
+  }
+}
+
+.first-col {
+  padding-left:20px;
+}
+
+
+
