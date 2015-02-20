@@ -1,13 +1,12 @@
 <div class="container padded">
   <div class="col-sm-4 col-sm-offset-4">
-    <% if @product.errors %>
-    <%= @product.errors.messages %>
-  <% end %>
     <%= simple_form_for(@product, url: account_product_path(@product)) do |f| %>
       <%= f.error_notification %>
 
       <%= f.input :title %>
-      <%= f.input :address %>
+      <%= f.input :address, :input => false %>
+      <%= text_field :search, params[:search], id: "user_input_autocomplete_address",  class: "form-control", name:"product[address]", value: "#{@product.address}" %>
+      <br>
       <%= f.input :night_price %>
       <%= f.input :description %>
       <%= f.input :online, as: :radio_buttons %>

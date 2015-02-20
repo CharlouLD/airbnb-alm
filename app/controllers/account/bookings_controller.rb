@@ -28,8 +28,8 @@ module Account
     def send_response_email
       @booking = Booking.find(params[:id])
       # raise
-      UserMailer.booking_accepted(@booking.customer).deliver if @booking.status = true
-      UserMailer.booking_rejected(@booking.customer).deliver if @booking.status = false
+      UserMailer.booking_accepted(@booking.customer).deliver if @booking.status == true
+      UserMailer.booking_rejected(@booking.customer).deliver if @booking.status == false
     end
 
   end
