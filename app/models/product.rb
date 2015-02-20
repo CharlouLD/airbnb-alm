@@ -16,4 +16,14 @@ class Product < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  def available?(checkin, checkout)
+    output = true
+    bookings.each do |booking|
+      if booking.status && (booking.check_in <= checkout && booking.checkout >= checkin)
+        output = false
+      end
+    end
+    output
+  end
 end
