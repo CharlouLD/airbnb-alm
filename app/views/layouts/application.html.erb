@@ -12,6 +12,9 @@
 <body>
   <%= render "shared/navbar" %>
   <%= yield %>
+  <!--  ## TODO  Change with refacto rail course -->
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
   <%= render "shared/footer" %>
 
 
@@ -25,8 +28,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= yield(:after_js) %>
 
- <!--  ## TODO  Change with refacto rail course -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+
 </body>
 </html>
