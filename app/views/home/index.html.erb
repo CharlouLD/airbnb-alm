@@ -54,8 +54,11 @@
     <div class="col-xs-12 band">
 
       <% @products.each do |p| %>
-          <%= render "product", product: p %>
+      <div class="col-xs-6 col-sm-4">
+        <%= render "products/card", product: p, footer: true %>
+      </div>
       <% end %>
+
    <!-- Statique à supprimer - MAX -->
    <!--    <div class=" col-sm-4">
         <%#= image_tag "appart_small.jpg", {id: "appart", alt:"Appartement"}%>
