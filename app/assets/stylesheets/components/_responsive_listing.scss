@@ -27,6 +27,7 @@ $listing-padding: 5px 0;
 
 $listing-text-position: left;
 $listing-border: 0.5px solid $gray-light;
+$listing-shadow: 1px 1px 1px $gray-light;
 
 /* -------------------------------------
  * Button
@@ -47,9 +48,10 @@ $listing-border: 0.5px solid $gray-light;
  * SCSS
  * ------------------------------------- */
 .listing{
-    padding: $listing-padding;
+
     text-align: $listing-text-position;
     border: $listing-border;
+    box-shadow: $listing-shadow;
     vertical-align: middle;
 
   .ls-title {
@@ -63,6 +65,7 @@ $listing-border: 0.5px solid $gray-light;
 
   .ls-row{
     // margin-top: 3px;
+    padding: $listing-padding;
     color: $listing-color;
     font-family: $listing-font;
     font-size:$listing-font-size;
@@ -106,4 +109,6 @@ $listing-border: 0.5px solid $gray-light;
 .first-col {
   padding-left:20px;
 }
+
+
 
